@@ -1,0 +1,8 @@
+ a:-webkit-any-link {
+    color: skyblue;
+    cursor: pointer;
+    text-decoration: underline;
+} 
+/* .navdar-brand {
+    color: aqua;
+} */

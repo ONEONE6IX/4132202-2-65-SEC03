@@ -1,5 +1,7 @@
 <?php
-include "condb.php";
+
+include "condb.php"
+
 ?>
 <table>
     <thead>
@@ -13,36 +15,31 @@ include "condb.php";
     </thead>
     <tbody>
         <?php
-        $sql = "SELECT * FROM tb_user ORDER BY user_id ASC";
-        $result = mysqli_query($link, $sql);
-        while ($row = mysqli_fetch_assoc($result)) {
+        $sql = "SELECT * FROM db_user ORDER BY user_id ASC";
+        $result = mysqli_query($link,$sql);
+        while ($row = mysqli_fetch_assoc($result));
         ?>
-    <tr>
-        <td><?=$row ['user_id']?></td>
-        <td><?=$row ['user_name']?></td>
-        <tdr><?=$row ['user_pass']?></tdr>
-        <td><button calss="btn_edit" data= "<?=$row ['user_id']?>">EDIT</button></td>
-        <td><button class="btn_del" data= "<?=$row ['user_id']?>">DEL</button></td>
-    </tr>
-    <?php
-    }
-    ?>
+        <tr>
+            <td><?=$row['user_id']?></td>
+            <td><?=$row['user_name']?></td>
+            <td><?=$row['user_pass']?></td>
+            <th><button Class="btn_edit" data="<?="user_id"?>">EDIT</button></th>
+            <th><button Class="btn_del" data="<?="user_id"?>">DEL</button></th>
+        </tr>
     </tbody>
 </table>
 
 <script>
-  $(".btn_del").click(function () {
-    let id_val = $(this).attr("data")
-     $.ajax({
-        url:"/model/user_del.php",
-        method:"GET",
-        data: {
-            id:id_val
-        },
-        success:function(res) {
-            $("#div_res").html(res);
-            $("#div_action").load("/model/user_data.php");
-        }
-     });
-  });
+    $(".btn_del").click(function (){
+        $.ajax({
+            url:"/model/user_del.php",
+            method:"GET",
+            data: {id: id_val},
+            success: function(res){
+                $("#div_res").html(res);
+                $("#div_action").lond("/model/user_data.php");
+            }
+        });
+    });
+    
 </script>

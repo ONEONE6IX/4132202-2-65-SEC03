@@ -4,7 +4,11 @@
     let name = "One";
     const arr = [10, 20, "O"];
     let obj = { name: "One", age: 30 };
-    const objmix = { data: [{ name: "Two", gpa: 3.51 }, { name: "One", age: 12, gpa: 3.12 }] };
+    const objmix = { data: [
+        { name: "Two", gpa: 3.51 }, 
+        { name: "One", age: 12, gpa: 3.12 },
+    ], 
+};
 
     console.log(num);
     console.log(arr[2]);
@@ -32,7 +36,7 @@
             $("#.in1.even").toggleClass("red");
         });
         
-        $("#div_form").load("./pagas/form.html");
+        $("#div_form").load("./pages/form.html");
 
     });
 

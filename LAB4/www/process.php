@@ -1,11 +1,12 @@
 <?php
 
-$user = $_GET['user'];
-echo "pass". $_GET["pass"];
-if ($user == '1'){
-    echo "HELLO";
-}else
-    echo $user;
+$user =$_GET['user'];
+echo "Pass:" .$GET['Pass'];
 
-    echo $user == 1 ? "HELLO" : $user
+if($user == '1'){
+    echo "Hello";
+}else
+echo $user;
+echo $user == 1 ? "Hello" : $user;
+
 ?>
